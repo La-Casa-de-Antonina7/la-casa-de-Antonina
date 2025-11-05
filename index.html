@@ -47,25 +47,22 @@
 </head>
 <body>
   <div class="container">
+    <!-- Hero -->
     <header class="hero">
       <img src="fotos/salon.jpg" alt="Salón principal de La Casa de Antonina">
       <div class="overlay">
         <div>
           <h1>La Casa de Antonina</h1>
           <p>En Castilblanco de los Arroyos — tranquilidad y naturaleza</p>
-          <!-- Botones grandes Booking y Airbnb -->
           <p style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank" rel="noopener" style="flex:1; text-align:center;">
-              Reservar en Booking
-            </a>
-            <a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank" rel="noopener" style="flex:1; text-align:center;">
-              Reservar en Airbnb
-            </a>
+            <a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank" rel="noopener" style="flex:1; text-align:center;">Reservar en Booking</a>
+            <a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank" rel="noopener" style="flex:1; text-align:center;">Reservar en Airbnb</a>
           </p>
         </div>
       </div>
     </header>
 
+    <!-- Navegación -->
     <nav class="nav">
       <a href="#inicio">Inicio</a>
       <a href="#la-casa">La Casa</a>
@@ -76,11 +73,13 @@
     </nav>
 
     <main>
+      <!-- Inicio -->
       <section id="inicio">
         <h2>Bienvenidos</h2>
         <p>La Casa de Antonina es una casa rural situada en Castilblanco de los Arroyos, ideal para desconectar en plena naturaleza. Perfecta para parejas, familias o grupos que buscan tranquilidad y confort.</p>
       </section>
 
+      <!-- La Casa -->
       <section id="la-casa">
         <h2>La Casa</h2>
         <div class="two-col">
@@ -102,6 +101,7 @@
         </div>
       </section>
 
+      <!-- Galería -->
       <section id="galeria">
         <h2>Galería</h2>
         <div class="gallery">
@@ -112,39 +112,68 @@
         </div>
       </section>
 
-
-
-
-      
+      <!-- Entorno -->
       <section id="entorno">
         <h2>Entorno</h2>
         <p>Castilblanco de los Arroyos y sus alrededores ofrecen rutas de senderismo, miradores, y pueblos con encanto. Actividades cercanas: paseos a caballo, visitas a reservas naturales y rutas gastronómicas locales.</p>
         <p><a class="secondary" href="https://www.google.com/maps/place/Castilblanco+de+los+Arroyos" target="_blank" rel="noopener">Ver en Google Maps</a></p>
       </section>
 
+      <!-- Reservas -->
       <section id="reservas">
-  <h2>Reservas</h2>
-  <div class="reserve-grid">
-    <div class="card">
-      <p><a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank" rel="noopener">
-        Reservar en Booking
-      </a></p>
-    </div>
-    <div class="card">
-      <p><a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank" rel="noopener">
-        Reservar en Airbnb
-      </a></p>
-    </div>
-  </div>
-</section>
+        <h2>Reservas</h2>
+        <div class="reserve-grid">
+          <div class="card">
+            <p><a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank" rel="noopener">Reservar en Booking</a></p>
+          </div>
+          <div class="card">
+            <p><a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank" rel="noopener">Reservar en Airbnb</a></p>
+          </div>
+        </div>
+      </section>
 
-    
-
+      <!-- Contacto -->
       <section id="contacto">
         <h2>Contacto</h2>
         <div class="two-col">
           <div>
             <p>Para más información y reservas puedes escribirnos o enviarnos un mensaje por WhatsApp.</p>
-            <p><strong>Email:</strong> <a href="mailto:casaantonina@pippeces.com">casaantonina@pippeces.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:casadeantonina@gmail.com">casadeantonina@gmail.com</a></p>
             <p><strong>Dirección:</strong> Castilblanco de los Arroyos (Sevilla)</p>
-            <form class="
+            
+            <form class="form-row" action="https://formsubmit.co/casadeantonina@gmail.com" method="POST">
+              <input type="text" name="name" placeholder="Tu nombre" required>
+              <input type="email" name="email" placeholder="Tu correo" required>
+              <textarea name="message" placeholder="Mensaje" required></textarea>
+              <button class="btn" type="submit">Enviar</button>
+            </form>
+
+            <p style="margin-top:10px">
+              <a class="btn secondary" href="https://www.instagram.com/lacasadeantonina?igsh=c3I2c3o5bWtneWI1" target="_blank" rel="noopener">Ver en Instagram</a>
+            </p>
+          </div>
+          <aside>
+            <div class="card">
+              <strong>Mapa</strong>
+              <div style="margin-top:8px;background:#f0f0f0;border-radius:8px;padding:8px;text-align:center;color:#888">
+                Mapa (reemplaza por iframe si quieres mostrar Google Maps)
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <small>© La Casa de Antonina — Castilblanco de los Arroyos</small>
+    </footer>
+  </div>
+
+  <!-- WhatsApp flotante -->
+  <a class="wa-float" href="https://wa.me/34624283847" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23fff' d='M20.5 3.5A11.8 11.8 0 0012 1C6 1 1.5 5.5 1.5 11.5c0 2 .6 3.9 1.7 5.6L1 23l6-2.5A11.5 11.5 0 0012 22c6 0 10.5-4.5 10.5-10.5 0-1.9-.6-3.5-2-5z'/></svg>" alt="WhatsApp">
+  </a>
+
+</body>
+</html>
