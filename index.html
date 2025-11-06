@@ -43,6 +43,33 @@
     .form-row{display:grid;gap:8px}
     input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
     textarea{min-height:100px}
+    /* Ajustes para móviles */
+@media (max-width: 600px) {
+  .btn {
+    font-size: 0.9rem; /* texto más pequeño */
+    padding: 8px 14px; /* menos espacio interno */
+  }
+
+  .reserve-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reserve-grid .card {
+    padding: 10px;
+  }
+
+  .hero img {
+    max-height: 250px; /* reduce altura de la imagen principal */
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
   </style>
 </head>
 <body>
