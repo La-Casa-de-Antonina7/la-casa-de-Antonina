@@ -9,6 +9,7 @@
     :root{
       --verde-oliva:#556b2f;
       --verde-claro:#6b8e23;
+      
       --beige:#f6efe6;
       --gris-osc:#333;
       --blanco:#ffffff;
@@ -121,6 +122,33 @@
   }
 }
 
+/* ---- Estilos para el bloque de historia ---- */
+.historia {
+  background: rgba(255,255,255,0.8);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.historia h3 {
+  color: var(--verde-oliva);
+  margin-top: 0;
+}
+
+.historia em {
+  color: var(--gris-osc);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+  .historia {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 14px;
+  }
+}
 
   </style>
 </head>
