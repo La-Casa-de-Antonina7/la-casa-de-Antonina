@@ -439,6 +439,25 @@ footer .instagram-icon img:hover {
   </a>
 </footer>
 
+    <!-- Lightbox básico -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;">
+  <img id="lightbox-img" src="" alt="" style="max-width:90%; max-height:90%; border-radius:8px;">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
 
