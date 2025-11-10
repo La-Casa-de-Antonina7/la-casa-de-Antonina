@@ -352,28 +352,60 @@
   });
 </script>
 
-
-    <!-- Entorno -->
+<!-- Entorno -->
 <section id="entorno">
   <h2>Entorno</h2>
   <div class="entorno-flex">
     <div class="entorno-imagen">
-      <img src="fotos/entorno.jpg" alt="Paisaje de Castilblanco de los Arroyos">
+      <img src="fotos/entorno.jpg" alt="Paisaje de Castilblanco de los Arroyos" />
     </div>
 
     <div class="historia">
       <p><strong>Castilblanco de los Arroyos</strong> es un pintoresco pueblo sevillano que combina tranquilidad, historia y tradición. Sus calles empedradas, plazas acogedoras y casas blancas invitan a pasear y descubrir rincones llenos de siglos de historia, que evocan la época medieval y el paso de viajeros y comerciantes.</p>
 
-      <p>Se dice que estas tierras estuvieron vinculadas a antiguos caminos que incluso inspiraron relatos de la época de <strong>Cervantes</strong>, donde la vida rural y las pequeñas historias cotidianas llenaban de color el paisaje.</p>
+      <p>Se sabe que estas tierras estuvieron vinculadas a antiguos caminos, entre ellos la histórica <strong>Vía de la Plata</strong>, por donde pasaban romanos y comerciantes transportando bienes y conocimiento. Los vestigios de la época romana aún se perciben en algunos yacimientos y restos arqueológicos cercanos, recordando la larga historia de esta tierra. Incluso se dice que estos caminos inspiraron relatos de la época de <strong>Cervantes</strong>.</p>
 
       <p>Rodeado de naturaleza, sus alrededores ofrecen rutas de senderismo, miradores, ríos y zonas de merenderos. Paseos a caballo, excursiones en bicicleta y la riqueza de la flora y fauna local completan la experiencia.</p>
 
-      <p>En los alrededores, el visitante puede descubrir también los encantos del <strong>Parque Natural de la Sierra Norte</strong>, con dehesas, encinares y antiguos molinos junto a los arroyos que dan nombre al pueblo. Cada estación transforma el paisaje, ofreciendo una experiencia distinta: el verdor de la primavera, el frescor de los riachuelos en verano, los tonos dorados del otoño y el sosiego invernal junto al fuego. <strong>Castilblanco</strong> no es solo un lugar para visitar, sino para sentir el ritmo pausado de la vida rural andaluza.</p>
+      <p>El visitante puede descubrir también los encantos del <strong>Parque Natural de la Sierra Norte</strong>, con dehesas, encinares y antiguos molinos junto a los arroyos que dan nombre al pueblo. Cada estación transforma el paisaje, ofreciendo una experiencia distinta: el verdor de la primavera, el frescor de los riachuelos, los tonos dorados del otoño y el sosiego invernal junto al fuego.</p>
+
+      <p>Castilblanco no es solo un lugar para visitar, sino para <strong>sentir el ritmo pausado de la vida rural andaluza</strong>, disfrutando de sus famosas <strong>romerías de San Benito y Escardiel</strong>, la gastronomía local, la apicultura centenaria que ha dejado huella en sus dulces típicos. Los paseos por sus plazas y los rincones escondidos de sus calles blancas invitan a vivir una experiencia completa, entre historia, cultura y naturaleza.</p>
+
+      <!-- Mini-galería de entorno -->
+      <div class="gallery entorno-gallery">
+        <img src="fotos/romeria-san-benito.jpg" alt="Romería de San Benito" />
+        <img src="fotos/romeria-escardiel.jpg" alt="Romería de Escardiel" />
+        <img src="fotos/piscina-municipal.jpg" alt="Piscina municipal" />
+        <img src="fotos/dulces-tipicos.jpg" alt="Dulces típicos de Castilblanco" />
+        <img src="fotos/apicultura.jpg" alt="Tradición de apicultura" />
+        <img src="fotos/calle-pintoresca.jpg" alt="Calles pintorescas del pueblo" />
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Lightbox para entorno -->
+<div id="lightbox-entorno" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;">
+  <img id="lightbox-img-entorno" src="" alt="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 0 12px rgba(255,255,255,0.3);" />
+</div>
 
+<script>
+  const lightboxEntorno = document.getElementById('lightbox-entorno');
+  const lightboxImgEntorno = document.getElementById('lightbox-img-entorno');
+
+  document.querySelectorAll('.entorno-gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImgEntorno.src = img.src;
+      lightboxEntorno.style.display = 'flex';
+    });
+  });
+
+  lightboxEntorno.addEventListener('click', () => {
+    lightboxEntorno.style.display = 'none';
+  });
+</script>
+  
+  
   <!-- Reservas -->
   <section id="reservas">
     <h2>Reservas</h2>
