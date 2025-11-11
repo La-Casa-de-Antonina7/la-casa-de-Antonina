@@ -375,7 +375,7 @@
       <div class="gallery entorno-gallery">
         <img src="fotos/romeria-san-benito.jpg" alt="Romería de San Benito" />
         <img src="fotos/romeria-escardiel.jpg" alt="Romería de Escardiel" />
-        <img src="fotos/piscina-municipal.jpg" alt="Piscina municipal" />
+        <img src="fotos/torreiglesia.jpg" alt="Piscina municipal" />
         <img src="fotos/dulces-tipicos.jpg" alt="Dulces típicos de Castilblanco" />
         <img src="fotos/apicultura.jpg" alt="Tradición de apicultura" />
         <img src="fotos/calle-pintoresca.jpg" alt="Calles pintorescas del pueblo" />
@@ -384,6 +384,28 @@
   </div>
 </section>
 
+<!-- Lightbox para entorno -->
+<div id="lightbox-entorno" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;">
+  <img id="lightbox-img-entorno" src="" alt="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 0 12px rgba(255,255,255,0.3);" />
+</div>
+
+<script>
+  const lightboxEntorno = document.getElementById('lightbox-entorno');
+  const lightboxImgEntorno = document.getElementById('lightbox-img-entorno');
+
+  document.querySelectorAll('.entorno-gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImgEntorno.src = img.src;
+      lightboxEntorno.style.display = 'flex';
+    });
+  });
+
+  lightboxEntorno.addEventListener('click', () => {
+    lightboxEntorno.style.display = 'none';
+  });
+</script>
+
+  
 <!-- Lightbox para entorno -->
 <div id="lightbox-entorno" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;">
   <img id="lightbox-img-entorno" src="" alt="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 0 12px rgba(255,255,255,0.3);" />
