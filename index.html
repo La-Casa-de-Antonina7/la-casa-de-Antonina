@@ -295,32 +295,28 @@
     
 <main>
 <!-- Inicio / Bienvenida -->
-<section id="inicio">
-  <div class="historia card" style="background:rgba(255,255,255,0.9); box-shadow:0 4px 12px rgba(0,0,0,0.1); border-radius:16px; padding:22px;">
-    <h3 style="margin-top:0; color:var(--verde-oliva);">La Casa de Antonina</h3>
+  <section id="inicio">
+  <div class="historia">
+    <h3>La Casa de Antonina</h3>
     <em>Un refugio con alma en Castilblanco de los Arroyos</em>
 
-    <p>En el corazón de Castilblanco de los Arroyos se encuentra <strong>La Casa de Antonina</strong>, la casa de sus abuelos, construida allá por los años 40. Fue testigo del paso de generaciones de la familia Ortega-Palomo y de la vida cotidiana del pueblo.</p>
-
-    <div id="texto-extendido" style="display:none; opacity:0; max-height:0; transition:opacity 0.6s ease, max-height 0.6s ease; overflow:hidden;">
-      <p>Durante décadas, sus paredes acogieron la tienda de comestibles de Antonina y José Ortega, conocido cariñosamente como Pepe Pechete. Aquel pequeño negocio se convirtió en punto de encuentro para los vecinos del pueblo. En los años de posguerra, Antonina atendía con generosidad y siempre con una sonrisa.</p>
-
-      <p>Los productos se vendían a granel, pesados en la báscula de hierro y envueltos en papel de estraza: legumbres, arroz, azúcar, tocino o sardinas arenques. Entre sacos, latas y conservas, su amabilidad hacía de la tienda un espacio de confidencias y amistad.</p>
-
-      <p>En la misma casa, Pepe regentaba una pequeña barbería, donde las tijeras nunca descansaban. Desde la mañana, con olor a pan recién hecho, hasta la noche, entre charlas y el aroma a loción Floïd, aquel rincón era un símbolo de convivencia y cercanía.</p>
-
-      <p>También fue relojero, reparando con paciencia las medidas del tiempo. Los relojes llenaban la casa: unos a medio arreglar, otros funcionando, y algunos que, como la casa misma, parecían detenidos en el tiempo. Allí vivió también Benito Ortega, hermano de Pepe, quien cuidaba el hogar y las cabras familiares. La leche que ordeñaba se convertía en quesos exquisitos elaborados por Antonina.</p>
-
-      <p>Sus tres hijas continuaron el legado familiar —dos con una peluquería en la casa y la mayor dedicándose a la enseñanza—, mientras los nietos llenaban el patio de risas y juegos. Con los años, aquel hogar se transformó en refugio de recuerdos, afecto y hospitalidad.</p>
-
-      <p>Hoy, <strong>La Casa de Antonina</strong> sigue viva como una acogedora casa rural, conservando la esencia de sus orígenes. Cada rincón guarda la historia de una familia y la calidez de una época que aún se respira entre sus paredes.</p>
+    <div class="texto-corto">
+      <p>En el corazón de Castilblanco de los Arroyos se encuentra La Casa de Antonina, la casa de mis abuelos. Fue construida allá por los años 40 y ha sido testigo de varias generaciones de la familia Ortega-Palomo y de la vida cotidiana del pueblo...</p>
     </div>
 
-    <p style="text-align:center;">
-      <a class="btn secondary" id="leerMasBtn" href="javascript:void(0)" style="margin-top:10px;">Leer más</a>
-    </p>
+    <div class="texto-completo">
+      <p>Durante décadas, sus paredes acogieron la tienda de comestibles de Antonina Palomo y José Ortega, conocido como Pepe Pechete. Mi abuela, en aquellos tiempos difíciles de posguerra, siempre encontraba la manera de dar un poquito más a quien más lo necesitaba...</p>
+
+      <p>Los productos se vendían a granel, puestos en la báscula de hierro y envueltos en papel de estraza...</p>
+
+      <p>Hoy, La Casa de Antonina vuelve a abrir sus puertas como una acogedora casa rural, que conserva la esencia familiar y el recuerdo de quienes la habitaron. De hogar familiar a refugio rural, sigue siendo un símbolo de tradición, afecto y comunidad en Castilblanco de los Arroyos.</p>
+    </div>
+
+    <button class="leer-mas" onclick="toggleTexto()">Leer más</button>
   </div>
 </section>
+
+
 
 <script>
   const leerMasBtn = document.getElementById("leerMasBtn");
@@ -585,6 +581,27 @@ footer .instagram-icon img {
 footer .instagram-icon img:hover {
   transform: scale(1.1);
 }
+  .texto-completo {
+  display: none;
+}
+
+.leer-mas {
+  display: inline-block;
+  background: var(--verde-oliva);
+  color: var(--blanco);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.leer-mas:hover {
+  background: var(--verde-claro);
+}
+
 </style>
 
 <footer>
