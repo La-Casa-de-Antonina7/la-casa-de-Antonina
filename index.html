@@ -43,26 +43,25 @@
     .form-row{display:grid;gap:8px}
     input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
     textarea{min-height:100px}
-    /* Ajustes para móviles */
-    @media (max-width: 600px) {
-      .btn{font-size:0.85rem;padding:8px 14px;border-radius:6px;width:100%;text-align:center}
+    /* Ajustes móviles */
+    @media(max-width:600px){
+      .btn{font-size:0.85rem;padding:8px 14px}
       .reserve-grid{display:flex;flex-direction:column;gap:10px}
       .reserve-grid .card{padding:8px}
       .card p{font-size:0.9rem;line-height:1.4}
       .hero img{max-height:220px;object-fit:cover}
       h2{font-size:1.1rem}
-      .hero .overlay{align-items:center;justify-content:center;text-align:center;padding:10px}
-      .hero h1{font-size:1.6rem;margin-bottom:6px}
-      .hero p{font-size:1rem;max-width:90%;margin:0 auto;line-height:1.4}
-      .historia{font-size:0.95rem;line-height:1.5;padding:14px}
+      .hero .overlay{align-items:center;justify-content:center;text-align:center;padding:12px;background:linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.35))}
+      .hero h1{font-size:1.3rem;margin-bottom:4px}
+      .hero p{font-size:0.9rem;line-height:1.3;margin:0}
     }
     /* Bloque historia */
-    .historia{background: rgba(255,255,255,0.8); padding: 18px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); font-size: 1rem; line-height: 1.7;}
-    .historia h3{color: var(--verde-oliva); margin-top:0;}
-    .historia em{color: var(--gris-osc); font-size:1.05rem;}
-    #texto-completo{display:none}
-    .leer-mas{display:inline-block;background:var(--verde-oliva);color:var(--blanco);border:none;padding:10px 18px;border-radius:999px;font-size:0.95rem;cursor:pointer;margin-top:10px;transition:background 0.3s ease;}
-    .leer-mas:hover{background:var(--verde-claro);}
+    .historia{background: rgba(255,255,255,0.8);padding:18px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05);font-size:1rem;line-height:1.7}
+    .historia h3{color: var(--verde-oliva);margin-top:0}
+    .historia em{color: var(--gris-osc);font-size:1.05rem}
+    .texto-completo{display:none}
+    .leer-mas{display:inline-block;background:var(--verde-oliva);color:var(--blanco);border:none;padding:10px 18px;border-radius:999px;font-size:0.95rem;cursor:pointer;margin-top:10px;transition: background 0.3s ease}
+    .leer-mas:hover{background:var(--verde-claro)}
     #entorno img{width:100%;max-width:800px;height:auto;display:block;margin:0 auto 16px auto;border-radius:12px}
     .entorno-flex{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}
     .entorno-imagen{flex:1 1 350px;display:flex;justify-content:center}
@@ -71,42 +70,41 @@
   </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
+    <!-- Hero -->
+    <header class="hero">
+      <img src="fotos/patioprincipal.jpg" alt="Fachada principal de La Casa de Antonina" loading="lazy">
+      <div class="overlay">
+        <div>
+          <h1>La Casa de Antonina</h1>
+          <p>En Castilblanco de los Arroyos — tranquilidad y naturaleza</p>
+          <p style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank" rel="noopener" style="flex:1; text-align:center;">Reservar en Booking</a>
+            <a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank" rel="noopener" style="flex:1; text-align:center;">Reservar en Airbnb</a>
+          </p>
+        </div>
+      </div>
+    </header>
 
-<!-- Hero -->
-<header class="hero">
-  <img src="fotos/patioprincipal.jpg" alt="Fachada principal de La Casa de Antonina">
-  <div class="overlay">
-    <div>
-      <h1>La Casa de Antonina</h1>
-      <p>En Castilblanco de los Arroyos — tranquilidad y naturaleza</p>
-      <p style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank">Reservar en Booking</a>
-        <a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank">Reservar en Airbnb</a>
-      </p>
-    </div>
-  </div>
-</header>
-
-<!-- Navegación -->
-<nav class="nav">
-  <a href="#inicio">Inicio</a>
-  <a href="#la-casa">La Casa</a>
-  <a href="#galeria">Galería</a>
-  <a href="#entorno">Entorno</a>
-  <a href="#reservas">Reservas</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+    <!-- Navegación -->
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#la-casa">La Casa</a>
+      <a href="#galeria">Galería</a>
+      <a href="#entorno">Entorno</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
 <main>
-<!-- Bienvenidos -->
+<!-- Inicio / Bienvenida -->
 <section id="inicio">
   <h2>Bienvenidos</h2>
   <div class="historia">
-    <p>En el corazón de Castilblanco de los Arroyos se encuentra La Casa de Antonina, la casa de mis abuelos.
-Fue construida allá por los años 40 y, desde entonces, ha sido testigo del paso de varias generaciones de la familia Ortega-Palomo y de la vida cotidiana de nuestro pueblo.</p>
-
-    <div id="texto-completo">
+    <p><strong>La Casa de Antonina</strong> es mucho más que una casa rural: es un refugio con alma en Castilblanco de los Arroyos. En su interior, cada rincón guarda la memoria de una familia y de todo un pueblo.</p>
+    <div class="texto-completo">
+      <p>En el corazón de Castilblanco de los Arroyos se encuentra La Casa de Antonina, la casa de mis abuelos.
+      Fue construida allá por los años 40 y, desde entonces, ha sido testigo del paso de varias generaciones de la familia Ortega-Palomo y de la vida cotidiana de nuestro pueblo.</p>
       <p>Durante décadas, sus paredes acogieron la tienda de comestibles de  Antonina Palomo y José Ortega, conocido cariñosamente como Pepe Pechete.  Mi abuela, con su carácter alegre, siempre encontraba la manera de dar un poquito más a quien más lo necesitaba. Así, aquella tienda se convirtió en punto de confidencias, de charla y de amistad, donde se tejían lazos que duraban toda una vida.</p>
       <p>Los productos se vendían a granel, puestos en la  báscula de hierro y envueltos con cariño en papel de estraza: legumbres, arroz, azúcar, aceite, tocino, bacalao o sardinas en arenque. Sacos de harina, latas y botes de conserva llenaban cada rincón de la tienda..</p>
       <p>En la misma casa, mi abuelo Pepe regentaba una pequeña barbería, donde las tijeras nunca descansaban. Empezaba  bien temprano, cuando el pueblo  despertaba con el olor a pan recién hecho, hasta la caída de la tarde, cuando ya los hombres regresaban del campo.  Así era el día a día de mi abuelo. Entre afeitados a navaja y  cortes de pelo, la barbería se llenaba de conversaciones y se  mezclaban  las risas y el murmullo del agua, con el sonido metálico de sus tijeras y el aroma de la loción Floïd. Y así se transformaban aquellos muros en un espacio para la complicidad y  la confidencialidad de historias compartidas.</p>
@@ -115,18 +113,32 @@ Fue construida allá por los años 40 y, desde entonces, ha sido testigo del pas
       <p>Tuvieron tres hijas. Dos de ellas continuaron el legado familiar abriendo una peluquería en la misma casa, mientras que la mayor se dedicó a la docencia, dejando una huella imborrable en varias generaciones..</p>
       <p>Con el paso del tiempo, la casa se convirtió en un lugar de reunión para los nietos. Llenábamos el patio y el corral de risas, juegos y travesuras, manteniendo viva la esencia del hogar que mis abuelos habían creado.</p>
       <p>Hoy, La Casa de Antonina vuelve a abrir sus puertas como una acogedora casa rural, que conserva todos los ingredientes y la esencia de la familia que crearon nuestros ancestros,  Hemos querido conservar su carácter hospitalario,  su alma y  el recuerdo de quienes la habitaron.
-De hogar familiar a refugio rural, sigue siendo un símbolo de tradición, afecto y comunidad en Castilblanco de los Arroyos.</p>
+      De hogar familiar a refugio rural, sigue siendo un símbolo de tradición, afecto y comunidad en Castilblanco de los Arroyos.</p>
     </div>
     <button class="leer-mas" onclick="toggleTexto()">Leer más</button>
   </div>
 </section>
+
+<script>
+function toggleTexto() {
+  const textoCompleto = document.querySelector('.texto-completo');
+  const boton = document.querySelector('.leer-mas');
+  if (textoCompleto.style.display === 'none' || textoCompleto.style.display === '') {
+    textoCompleto.style.display = 'block';
+    boton.textContent = 'Leer menos';
+  } else {
+    textoCompleto.style.display = 'none';
+    boton.textContent = 'Leer más';
+    window.scrollTo({ top: document.getElementById('inicio').offsetTop, behavior: 'smooth' });
+  }
+}
+</script>
 
 <!-- La Casa -->
 <section id="la-casa">
   <h2>La Casa</h2>
   <div class="descripcion-casa">
     <p><strong>La Casa de Antonina</strong> ofrece todas las comodidades para una estancia agradable en Castilblanco de los Arroyos.</p>
-
     <h3>Distribución y espacios</h3>
     <ul>
       <li>2 habitaciones</li>
@@ -135,19 +147,17 @@ De hogar familiar a refugio rural, sigue siendo un símbolo de tradición, afect
       <li>Salón</li>
       <li>Cocina-comedor completa con electrodomésticos y menaje</li>
     </ul>
-
     <h3>Servicios incluidos</h3>
     <ul>
       <li>Wifi gratuito</li>
       <li>Ropa de cama y toallas</li>
       <li>Patio privado con mobiliario de jardín</li>
     </ul>
-
     <p><strong>Precio:</strong> desde <strong>80 € por noche</strong> (según temporada).</p>
   </div>
 </section>
 
-<!-- Galería y Entorno -->
+<!-- Galería -->
 <section id="galeria">
   <h2>Galería</h2>
   <div class="gallery entorno-gallery">
@@ -169,110 +179,67 @@ De hogar familiar a refugio rural, sigue siendo un símbolo de tradición, afect
   </div>
 </section>
 
+<!-- Lightbox galería -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;">
+  <img id="lightbox-img" src="" alt="" style="max-width:90%; max-height:90%; border-radius:8px;">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+  lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+</script>
+
+<!-- Entorno -->
 <section id="entorno">
   <h2>Entorno</h2>
   <div class="entorno-flex">
     <div class="entorno-imagen">
-      <img src="fotos/entorno.jpg" alt="Paisaje de Castilblanco de los Arroyos" />
+      <img src="fotos/entorno.jpg" alt="Paisaje de Castilblanco de los Arroyos">
     </div>
     <div class="historia">
       <p><strong>Castilblanco de los Arroyos</strong> es un pintoresco pueblo sevillano que combina tranquilidad, historia y tradición. Sus calles empedradas, plazas acogedoras y casas blancas invitan a pasear y descubrir rincones llenos de siglos de historia, que evocan la época medieval y el paso de viajeros y comerciantes.</p>
+
       <p>Se sabe que estas tierras estuvieron vinculadas a antiguos caminos, entre ellos la histórica <strong>Vía de la Plata</strong>, por donde pasaban romanos y comerciantes transportando bienes y conocimiento. Los vestigios de la época romana aún se perciben en algunos yacimientos y restos arqueológicos cercanos, recordando la larga historia de esta tierra. Incluso se dice que estos caminos inspiraron relatos de la época de <strong>Cervantes</strong>.</p>
-      <p>Rodeado de naturaleza, sus alrededores ofrecen rutas de senderismo, miradores, ríos y zonas de merenderos. Paseos a caballo, excursiones en bicicleta y la riqueza de la flora y fauna local completan la experiencia.</p>
-      <p>El visitante puede descubrir también los encantos del <strong>Parque Natural de la Sierra Norte</strong>, con dehesas, encinares y antiguos molinos junto a los arroyos que dan nombre al pueblo. Cada estación transforma el paisaje, ofreciendo una experiencia distinta: el verdor de la primavera, el frescor de los riachuelos, los tonos dorados del otoño y el sosiego invernal junto al fuego.</p>
-      <p>Castilblanco no es solo un lugar para visitar, sino para <strong>sentir el ritmo pausado de la vida rural andaluza</strong>, disfrutando de sus famosas <strong>romerías de San Benito y Escardiel</strong>, la gastronomía local, la apicultura centenaria que ha dejado huella en sus dulces típicos. Los paseos por sus plazas y los rincones escondidos de sus calles blancas invitan a vivir una experiencia completa, entre historia, cultura y naturaleza.</p>
-      <div class="gallery entorno-gallery">
-        <img src="fotos/romeriasanbenito.jpg" alt="Romería de San Benito" />
-        <img src="fotos/romeriaescardiel1.jpg" alt="Romería de Escardiel" />
-        <img src="fotos/cervantes.jpg" alt="Piscina municipal" />
-        <img src="fotos/piñonate.jpg" alt="Dulces típicos de Castilblanco" />
-        <img src="fotos/sandracolinet.png" alt="Tradición de apicultura" />
-        <img src="fotos/iglesia.jpg" alt="Calles pintorescas del pueblo" />
-      </div>
+
+      <p>Disfruta de la naturaleza y el río cercano para practicar senderismo, rutas en bicicleta o simplemente relajarte rodeado de paisajes típicos de Andalucía. También puedes visitar el <a href="https://goo.gl/maps/XJ6NzVqP9pQhsmSg7" target="_blank" rel="noopener">mapa del pueblo</a> para organizar tu visita.</p>
     </div>
   </div>
 </section>
 
-<!-- Reservas y contacto -->
+<!-- Reservas -->
+<section id="reservas">
+  <h2>Reservas</h2>
+  <div class="reserve-grid">
+    <a class="card btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank" rel="noopener">Reservar en Booking</a>
+    <a class="card btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank" rel="noopener">Reservar en Airbnb</a>
+  </div>
+</section>
+
+<!-- Contacto -->
 <section id="contacto">
   <h2>Contacto</h2>
-  <div class="two-col">
-    <div>
-      <p>Para más información y reservas puedes escribirnos o enviarnos un mensaje por WhatsApp.</p>
-      <p><strong>Email:</strong> <a href="mailto:casaantonina@pippeces.com">casaantonina@pippeces.com</a></p>
-      <p><strong>Dirección:</strong> Castilblanco de los Arroyos (Sevilla)</p>
-
-      <form class="form-row" action="https://formsubmit.co/casadeantonina@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo" required>
-        <textarea name="message" placeholder="Mensaje" required></textarea>
-        <button class="btn" type="submit">Enviar</button>
-      </form>
-
-      <p style="margin-top:10px">
-        <a class="btn secondary" href="https://www.instagram.com/lacasadeantonina" target="_blank" rel="noopener">Ver en Instagram</a>
-      </p>
-    </div>
-
-    <aside>
-      <div class="card">
-        <strong>Mapa</strong>
-        <div style="margin-top:8px;">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.1234567890123!2d-5.8501234!3d37.5912345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126abcd1234567%3A0xabcdef123456789!2sLa%20Casa%20de%20Antonina!5e0!3m2!1ses!2ses!4v1690000000000!5m2!1ses!2ses"
-            width="100%" height="250" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </aside>
-  </div>
+  <p>Puedes ponerte en contacto con nosotros por WhatsApp, correo electrónico o visitando nuestra ubicación:</p>
+  <p><a href="https://api.whatsapp.com/send?phone=346XXXXXXXX" target="_blank" class="btn">WhatsApp</a></p>
+  <p><a href="mailto:info@lacasadeantonina.com" class="btn secondary">Correo electrónico</a></p>
+  <p><a href="https://goo.gl/maps/XJ6NzVqP9pQhsmSg7" target="_blank" class="btn secondary">Ver en Google Maps</a></p>
 </section>
 
+<!-- WhatsApp flotante -->
+<a href="https://api.whatsapp.com/send?phone=346XXXXXXXX" target="_blank" class="wa-float">
+  <img src="iconos/whatsapp.svg" alt="WhatsApp">
+</a>
+
 <footer>
-  &copy; 2025 La Casa de Antonina — Todos los derechos reservados.
+  &copy; 2025 La Casa de Antonina — Todos los derechos reservados
 </footer>
-
-<a href="https://wa.me/34600111222" target="_blank" class="wa-float"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
-
+</main>
 </div>
-
-<script>
-function toggleTexto() {
-  var texto = document.getElementById("texto-completo");
-  var btn = document.querySelector(".leer-mas");
-  if (texto.style.display === "none") {
-    texto.style.display = "block";
-    btn.textContent = "Leer menos";
-  } else {
-    texto.style.display = "none";
-    btn.textContent = "Leer más";
-  }
-}
-
-// Lightbox simple para galería
-document.querySelectorAll('.gallery img').forEach(img => {
-  img.addEventListener('click', () => {
-    const overlay = document.createElement('div');
-    overlay.style.position='fixed';
-    overlay.style.top='0';
-    overlay.style.left='0';
-    overlay.style.width='100%';
-    overlay.style.height='100%';
-    overlay.style.background='rgba(0,0,0,0.9)';
-    overlay.style.display='flex';
-    overlay.style.alignItems='center';
-    overlay.style.justifyContent='center';
-    overlay.style.cursor='pointer';
-    overlay.style.zIndex='1000';
-    const imgBig = document.createElement('img');
-    imgBig.src = img.src;
-    imgBig.style.maxWidth='90%';
-    imgBig.style.maxHeight='90%';
-    imgBig.style.borderRadius='12px';
-    overlay.appendChild(imgBig);
-    overlay.addEventListener('click', ()=>overlay.remove());
-    document.body.appendChild(overlay);
-  });
-});
-</script>
 </body>
 </html>
