@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="Offhk7E9_nHKySos6mqj1lZtxgUZVrnLzRgOnBIfz4Y" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>La Casa de Antonina — Castilblanco de los Arroyos</title>
   <meta name="description" content="La Casa de Antonina, casa rural en Castilblanco de los Arroyos. Tranquilidad, naturaleza y comodidad para familias y parejas.">
@@ -32,8 +31,8 @@
     @media(min-width:820px){.two-col{grid-template-columns:1fr 380px}}
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
     @media(min-width:640px){.gallery{grid-template-columns:repeat(3,1fr)}}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;text-align:center}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px;cursor:pointer}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;text-align:center;cursor:pointer}
     .secondary{background:transparent;border:1px solid rgba(0,0,0,0.08);color:var(--gris-osc)}
     .wa-float{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.18);z-index:60}
     .wa-float img{width:28px;height:28px}
@@ -44,7 +43,8 @@
     .form-row{display:grid;gap:8px}
     input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
     textarea{min-height:100px}
-    /* Ajustes para móviles */
+
+    /* Ajustes móviles */
     @media (max-width: 600px) {
       .btn { font-size:0.85rem; padding:8px 14px; border-radius:6px; display:inline-block; width:100%; text-align:center;}
       .reserve-grid { display:flex; flex-direction:column; gap:10px;}
@@ -55,20 +55,23 @@
       .hero .overlay { align-items:center; justify-content:center; text-align:center;}
       .hero h1 { font-size:1.5rem;}
       .hero p { font-size:0.95rem;}
-      .historia { font-size:0.95rem; line-height:1.5; padding:14px;}
     }
-    /* Bloque historia */
-    .historia { background: rgba(255,255,255,0.8); padding: 18px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.05); font-size:1rem; line-height:1.7;}
-    .historia h3 { color: var(--verde-oliva); margin-top:0;}
-    .historia em { color: var(--gris-osc); font-size:1.05rem;}
-    #entorno img { width:100%; max-width:800px; height:auto; display:block; margin:0 auto 16px auto; border-radius:12px;}
+
+    /* Historia / texto desplegable */
+    .historia { background: rgba(255,255,255,0.8); padding:18px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.05); font-size:1rem; line-height:1.7;}
+    .texto-completo{display:none; margin-top:10px;}
+    .leer-mas{display:inline-block;background:var(--verde-oliva);color:white;border:none;padding:10px 18px;border-radius:999px;font-size:0.95rem;cursor:pointer;margin-top:10px;transition:background 0.3s;}
+    .leer-mas:hover{background:var(--verde-claro);}
+
+    /* Entorno */
     .entorno-flex{ display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;}
     .entorno-imagen{ flex:1 1 350px; display:flex; justify-content:center;}
-    .entorno-imagen img{ width:100%; max-width:500px; height:320px; object-fit:cover; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+    .entorno-imagen img{ width:100%; max-width:500px; height:320px; object-fit:cover; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.1); cursor:pointer;}
     @media(max-width:700px){ .entorno-flex{ flex-direction:column; align-items:center;} .entorno-imagen img{max-width:100%; height:auto;} }
-    .texto-completo{display:none;}
-    .leer-mas{ display:inline-block; background:var(--verde-oliva); color:var(--blanco); border:none; padding:10px 18px; border-radius:999px; font-size:0.95rem; cursor:pointer; margin-top:10px; transition:background 0.3s;}
-    .leer-mas:hover{ background:var(--verde-claro);}
+
+    /* Lightbox */
+    #lightbox, #lightbox-entorno{display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;}
+    #lightbox img, #lightbox-entorno img{max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 12px rgba(255,255,255,0.3);}
   </style>
 </head>
 <body>
@@ -101,13 +104,12 @@
 
   <main>
 
-    <!-- Inicio / Bienvenidos -->
+    <!-- Bienvenidos -->
     <section id="inicio">
       <h2>Bienvenidos</h2>
       <div class="historia">
         <p><strong>La Casa de Antonina</strong> es mucho más que una casa rural: es un refugio con alma en Castilblanco de los Arroyos. En su interior, cada rincón guarda la memoria de una familia y de todo un pueblo.</p>
-
-        <div id="texto-completo" style="display:none;">
+        <div class="texto-completo">
           <p>Construida en los años 40, fue el hogar de los abuelos de la familia Ortega-Palomo y testigo silencioso del paso de las generaciones y de la vida cotidiana del pueblo.</p>
           <p>Durante décadas, sus muros guardaron el bullicio de una pequeña tienda de comestibles, regentada por <strong>Antonina y José Ortega</strong>, conocido cariñosamente como <strong>Pepe Pechete</strong>. En aquellos tiempos difíciles de posguerra, el local se convirtió en punto de encuentro y refugio, donde la generosidad de Antonina y su eterna sonrisa daban calor incluso en los días más duros.</p>
           <p>Entre sacos de harina, latas, conservas y papel de estraza, se pesaban legumbres, arroz, azúcar o bacalao en una vieja báscula de hierro. Allí, cada gesto y cada palabra tejían lazos de confianza y amistad que duraban toda una vida.</p>
@@ -120,8 +122,7 @@
           <p>Convertida ahora en un espacio de descanso y desconexión, la casa invita a sus visitantes a disfrutar del encanto de la tradición, la hospitalidad y la serenidad de los paisajes de la Sierra Norte sevillana.</p>
           <p><strong>De hogar familiar a refugio rural, La Casa de Antonina sigue siendo un símbolo de afecto, historia y comunidad en Castilblanco de los Arroyos.</strong></p>
         </div>
-
-        <button id="leerMasBtn" class="btn">Leer más</button>
+        <button class="leer-mas">Leer más</button>
       </div>
     </section>
 
@@ -130,7 +131,6 @@
       <h2>La Casa</h2>
       <div class="descripcion-casa">
         <p><strong>La Casa de Antonina</strong> ofrece todas las comodidades para una estancia agradable en Castilblanco de los Arroyos.</p>
-
         <h3>Distribución y espacios</h3>
         <ul>
           <li>2 habitaciones</li>
@@ -139,36 +139,89 @@
           <li>Salón</li>
           <li>Cocina-comedor completa con electrodomésticos y menaje</li>
         </ul>
-
         <h3>Servicios incluidos</h3>
         <ul>
           <li>Wifi gratuito</li>
           <li>Ropa de cama y toallas</li>
           <li>Patio privado con mobiliario de jardín</li>
         </ul>
-
         <p><strong>Precio:</strong> desde <strong>80 € por noche</strong> (según temporada).</p>
       </div>
     </section>
 
-    <!-- Galería, Entorno, Reservas, Contacto (sin cambios) -->
+    <!-- Galería -->
+    <section id="galeria">
+      <h2>Galería</h2>
+      <div class="gallery">
+        <img src="fotos/salonsofa.jpg" alt="Salón principal">
+        <img src="fotos/vitrinapeso.jpg" alt="Cocina principal">
+        <img src="fotos/cocinaextractor.jpg" alt="Salón principal">
+        <img src="fotos/sillonprinci.jpg" alt="Salón principal">
+      </div>
+    </section>
+
+    <!-- Entorno -->
+    <section id="entorno">
+      <h2>Entorno</h2>
+      <div class="entorno-flex">
+        <div class="entorno-imagen">
+          <img src="fotos/entorno.jpg" alt="Paisaje de Castilblanco de los Arroyos">
+        </div>
+        <div class="historia">
+          <p><strong>Castilblanco de los Arroyos</strong> es un pintoresco pueblo sevillano que combina tranquilidad, historia y tradición...</p>
+          <div class="gallery entorno-gallery">
+            <img src="fotos/romeriasanbenito.jpg" alt="Romería de San Benito">
+            <img src="fotos/romeriaescardiel1.jpg" alt="Romería de Escardiel">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservas y contacto se pueden añadir aquí -->
 
   </main>
 
   <!-- Botón Leer más script -->
   <script>
-    const btn = document.getElementById('leerMasBtn');
-    const texto = document.getElementById('texto-completo');
-
-    btn.addEventListener('click', () => {
-      const isHidden = texto.style.display === 'none';
-      texto.style.display = isHidden ? 'block' : 'none';
-      btn.textContent = isHidden ? 'Leer menos' : 'Leer más';
-      if (!isHidden) {
+    document.querySelector('.leer-mas').addEventListener('click', function() {
+      const texto = document.querySelector('.texto-completo');
+      if (texto.style.display === 'none' || texto.style.display === '') {
+        texto.style.display = 'block';
+        this.textContent = 'Leer menos';
+      } else {
+        texto.style.display = 'none';
+        this.textContent = 'Leer más';
         window.scrollTo({ top: document.getElementById('inicio').offsetTop, behavior: 'smooth' });
       }
     });
+
+    // Lightbox galería
+    function setupLightbox(selector) {
+      const lightbox = document.createElement('div');
+      lightbox.id = 'lightbox-temp';
+      lightbox.style.cssText = 'display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;';
+      const img = document.createElement('img');
+      img.style.cssText = 'max-width:90%; max-height:90%; border-radius:10px;';
+      lightbox.appendChild(img);
+      document.body.appendChild(lightbox);
+
+      document.querySelectorAll(selector).forEach(i => {
+        i.addEventListener('click', ()=> {
+          img.src = i.src;
+          lightbox.style.display = 'flex';
+        });
+      });
+
+      lightbox.addEventListener('click', ()=>{ lightbox.style.display='none'; });
+    }
+    setupLightbox('.gallery img');
+    setupLightbox('.entorno-gallery img');
   </script>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/34624283847" class="wa-float" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 
 </div>
 </body>
