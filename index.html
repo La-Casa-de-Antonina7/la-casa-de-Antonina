@@ -262,7 +262,33 @@
     margin: 0;
   }
 }
-  
+  /* === NUEVO BLOQUE PARA TEXTO DESPLEGABLE === */
+#texto-historia {
+  max-height: 280px;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+#texto-historia.expandido {
+  max-height: 4000px; /* se despliega completamente */
+}
+
+#boton-historia {
+  display: block;
+  margin: 14px auto 0;
+  background: var(--verde-oliva);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#boton-historia:hover {
+  background: var(--verde-claro);
+}
+
   </style>
 </head>
 <body>
