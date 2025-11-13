@@ -295,53 +295,46 @@
     
 <main>
 <!-- Inicio / Bienvenida -->
-  <section id="inicio">
+ <section id="inicio">
   <div class="historia">
     <h3>La Casa de Antonina</h3>
     <em>Un refugio con alma en Castilblanco de los Arroyos</em>
 
-    <div class="texto-corto">
-      <p>En el corazón de Castilblanco de los Arroyos se encuentra La Casa de Antonina, la casa de mis abuelos. Fue construida allá por los años 40 y ha sido testigo de varias generaciones de la familia Ortega-Palomo y de la vida cotidiana del pueblo...</p>
+    <div id="texto-historia" class="texto-corto">
+      <p>En el corazón de Castilblanco de los Arroyos se encuentra La Casa de Antonina, la casa de mis abuelos. Fue construida allá por los años 40 y, desde entonces, ha sido testigo del paso de varias generaciones de la familia Ortega-Palomo y de la vida cotidiana de nuestro pueblo.</p>
+
+      <p>Durante décadas, sus paredes acogieron la tienda de comestibles de Antonina Palomo y José Ortega, conocido cariñosamente como Pepe Pechete. Mi abuela, en aquellos tiempos difíciles de posguerra, siempre encontraba la manera de dar un poquito más a quien más lo necesitaba. Así, aquella tienda se convirtió en punto de confidencias, de charla, de amistad y generosidad, donde se tejían lazos que duraban toda una vida.</p>
+
+      <p>Los productos se vendían a granel, puestos en la báscula de hierro y envueltos con cariño en papel de estraza: legumbres, arroz, azúcar, aceite, tocino, bacalao o sardinas en arenque. Sacos de harina, latas y botes de conserva llenaban cada rincón de la tienda.</p>
+
+      <p>En la misma casa, mi abuelo Pepe regentaba una pequeña barbería, donde las tijeras nunca descansaban. Empezaba bien temprano, cuando el pueblo despertaba con el olor a pan recién hecho, hasta la caída de la tarde, cuando ya los hombres regresaban del campo. Entre afeitados a navaja y cortes de pelo, la barbería se llenaba de conversaciones y se mezclaban las risas y el murmullo del agua, con el sonido metálico de sus tijeras y el aroma de la loción Floïd. Así era el día a día de mi abuelo, y así se fueron transformando aquellos muros en un espacio que fue cómplice, durante años, de muchas confidencias y de historias compartidas.</p>
+
+      <p>Con el tiempo, Pepe se dedicó también a la relojería, reparando con paciencia las medidas del tiempo. La casa se llenaba de relojes: algunos esperando reparación, otros ya marcando de nuevo el compás del tiempo, y otros pocos, con menos fortuna, quedaban perdidos en el tiempo, como si guardaran entre sus engranajes los recuerdos del pasado.</p>
+
+      <p>Vivió también Benito Ortega, hermano de mi abuelo, que ayudaba en las tareas del hogar y cuidaba de las cabras de la familia. Cada mañana ordeñaba la leche que luego mi abuela transformaba en quesos artesanales, con la paciencia y el mimo de quien hace las cosas con amor.</p>
+
+      <p>Tuvieron tres hijas. Dos de ellas continuaron el legado familiar abriendo una peluquería en la misma casa, mientras que la mayor se dedicó a la docencia, dejando una huella imborrable en varias generaciones.</p>
+
+      <p>Con el paso del tiempo, la casa se convirtió en un lugar de reunión para los nietos. Llenábamos el patio y el corral de risas, juegos y travesuras, manteniendo viva la esencia del hogar que mis abuelos habían creado.</p>
+
+      <p>Hoy, La Casa de Antonina vuelve a abrir sus puertas como una acogedora casa rural, que conserva todos los ingredientes y la esencia de la familia que crearon nuestros ancestros. Hemos querido conservar su carácter hospitalario, su alma y el recuerdo de quienes la habitaron. De hogar familiar a refugio rural, sigue siendo un símbolo de tradición, afecto y comunidad en Castilblanco de los Arroyos.</p>
     </div>
 
-    <div class="texto-completo">
-      <p>Durante décadas, sus paredes acogieron la tienda de comestibles de Antonina Palomo y José Ortega, conocido como Pepe Pechete. Mi abuela, en aquellos tiempos difíciles de posguerra, siempre encontraba la manera de dar un poquito más a quien más lo necesitaba...</p>
-
-      <p>Los productos se vendían a granel, puestos en la báscula de hierro y envueltos en papel de estraza...</p>
-
-      <p>Hoy, La Casa de Antonina vuelve a abrir sus puertas como una acogedora casa rural, que conserva la esencia familiar y el recuerdo de quienes la habitaron. De hogar familiar a refugio rural, sigue siendo un símbolo de tradición, afecto y comunidad en Castilblanco de los Arroyos.</p>
-    </div>
-
-    <button class="leer-mas" onclick="toggleTexto()">Leer más</button>
+    <button id="boton-historia" class="btn">Leer más</button>
   </div>
 </section>
 
-
-
 <script>
-  const leerMasBtn = document.getElementById("leerMasBtn");
-  const textoExtendido = document.getElementById("texto-extendido");
-  let abierto = false;
+  const texto = document.getElementById("texto-historia");
+  const boton = document.getElementById("boton-historia");
 
-  leerMasBtn.addEventListener("click", () => {
-    if (!abierto) {
-      textoExtendido.style.display = "block";
-      setTimeout(() => {
-        textoExtendido.style.opacity = "1";
-        textoExtendido.style.maxHeight = textoExtendido.scrollHeight + "px";
-      }, 10);
-      leerMasBtn.textContent = "Leer menos";
-    } else {
-      textoExtendido.style.opacity = "0";
-      textoExtendido.style.maxHeight = "0";
-      setTimeout(() => {
-        textoExtendido.style.display = "none";
-      }, 600);
-      leerMasBtn.textContent = "Leer más";
-    }
-    abierto = !abierto;
+  boton.addEventListener("click", () => {
+    texto.classList.toggle("expandido");
+    boton.textContent = texto.classList.contains("expandido") ? "Leer menos" : "Leer más";
   });
 </script>
+
+      
 <!-- Fin de Inicio / Bienvenida -->
 
   <!-- La Casa -->
