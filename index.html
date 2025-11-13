@@ -629,6 +629,21 @@ footer .instagram-icon img:hover {
   });
 </script>
 
+<script>
+function toggleTexto() {
+  const textoCompleto = document.querySelector('.texto-completo');
+  const boton = document.querySelector('.leer-mas');
+
+  if (textoCompleto.style.display === 'none' || textoCompleto.style.display === '') {
+    textoCompleto.style.display = 'block';
+    boton.textContent = 'Leer menos';
+  } else {
+    textoCompleto.style.display = 'none';
+    boton.textContent = 'Leer más';
+  }
+}
+</script>
+    
 </body>
 </html>
 
