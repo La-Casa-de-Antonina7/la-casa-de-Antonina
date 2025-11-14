@@ -202,16 +202,12 @@ lightbox.addEventListener('click', () => {
 });
 </script>
 
-<!-- Entorno -->
+  <!-- Entorno -->
 <section id="entorno">
   <h2>Entorno</h2>
   <div class="entorno-flex">
     <div class="entorno-imagen">
-      <img src="fotos/entorno.jpg"
-           srcset="fotos/entorno_480.jpg 480w, fotos/entorno_768.jpg 768w, fotos/entorno_1200.jpg 1200w"
-           sizes="(max-width: 600px) 100vw, (max-width: 900px) 48vw, 50vw"
-           alt="Paisaje de Castilblanco de los Arroyos"
-           loading="lazy">
+      <img src="fotos/entorno.jpg" alt="Paisaje de Castilblanco de los Arroyos" />
     </div>
 
     <div class="historia">
@@ -227,40 +223,37 @@ lightbox.addEventListener('click', () => {
 
       <!-- Mini-galería de entorno -->
       <div class="gallery entorno-gallery">
-        <img src="fotos/romeriasanbenito.jpg"
-             srcset="fotos/romeriasanbenito_480.jpg 480w, fotos/romeriasanbenito_768.jpg 768w, fotos/romeriasanbenito_1200.jpg 1200w"
-             sizes="(max-width: 600px) 100vw, 48vw"
-             alt="Romería de San Benito"
-             loading="lazy">
-        <img src="fotos/romeriaescardiel1.jpg"
-             srcset="fotos/romeriaescardiel1_480.jpg 480w, fotos/romeriaescardiel1_768.jpg 768w, fotos/romeriaescardiel1_1200.jpg 1200w"
-             sizes="(max-width: 600px) 100vw, 48vw"
-             alt="Romería de Escardiel"
-             loading="lazy">
-        <img src="fotos/cervantes.jpg"
-             srcset="fotos/cervantes_480.jpg 480w, fotos/cervantes_768.jpg 768w, fotos/cervantes_1200.jpg 1200w"
-             sizes="(max-width: 600px) 100vw, 48vw"
-             alt="Piscina municipal"
-             loading="lazy">
-        <img src="fotos/piñonate.jpg"
-             srcset="fotos/piñonate_480.jpg 480w, fotos/piñonate_768.jpg 768w, fotos/piñonate_1200.jpg 1200w"
-             sizes="(max-width: 600px) 100vw, 48vw"
-             alt="Dulces típicos de Castilblanco"
-             loading="lazy">
-        <img src="fotos/sandracolinet.png"
-             srcset="fotos/sandracolinet_480.png 480w, fotos/sandracolinet_768.png 768w, fotos/sandracolinet_1200.png 1200w"
-             sizes="(max-width: 600px) 100vw, 48vw"
-             alt="Tradición de apicultura"
-             loading="lazy">
-        <img src="fotos/iglesia.jpg"
-             srcset="fotos/iglesia_480.jpg 480w, fotos/iglesia_768.jpg 768w, fotos/iglesia_1200.jpg 1200w"
-             sizes="(max-width: 600px) 100vw, 48vw"
-             alt="Calles pintorescas del pueblo"
-             loading="lazy">
+        <img src="fotos/romeriasanbenito.jpg" alt="Romería de San Benito" />
+        <img src="fotos/romeriaescardiel1.jpg" alt="Romería de Escardiel" />
+        <img src="fotos/cervantes.jpg" alt="Piscina municipal" />
+        <img src="fotos/piñonate.jpg" alt="Dulces típicos de Castilblanco" />
+        <img src="fotos/sandracolinet.png" alt="Tradición de apicultura" />
+        <img src="fotos/iglesia.jpg" alt="Calles pintorescas del pueblo" />
       </div>
     </div>
   </div>
 </section>
+
+<!-- Lightbox para entorno -->
+<div id="lightbox-entorno" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:999;">
+  <img id="lightbox-img-entorno" src="" alt="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 0 12px rgba(255,255,255,0.3);" />
+</div>
+
+<script>
+  const lightboxEntorno = document.getElementById('lightbox-entorno');
+  const lightboxImgEntorno = document.getElementById('lightbox-img-entorno');
+
+  document.querySelectorAll('.entorno-gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImgEntorno.src = img.src;
+      lightboxEntorno.style.display = 'flex';
+    });
+  });
+
+  lightboxEntorno.addEventListener('click', () => {
+    lightboxEntorno.style.display = 'none';
+  });
+</script>
 
 
 <!-- Reservas -->
