@@ -45,6 +45,28 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e
 textarea{min-height:100px;}
 /* Ajustes móviles */
 @media (max-width: 600px) {
+/* BOTONES DEL HERO EN UNA SOLA FILA Y MÁS ABAJO */
+.hero .overlay p {
+  display: flex;
+  flex-wrap: nowrap;        /* Que NO se pongan uno debajo del otro */
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.hero .btn {
+  padding: 6px 10px;        /* Botón más estrecho */
+  font-size: 0.80rem;       /* Texto más pequeño */
+  width: auto;              /* Evita ancho completo */
+  border-radius: 6px;
+}
+
+/* Bajar el bloque de texto + botones hacia el borde inferior */
+.hero .overlay {
+  align-items: flex-end !important; 
+  padding-bottom: 10px;      /* Lo más pegado al borde sin tocarlo */
+}
+
   .btn{font-size:0.85rem;padding:6px 10px;border-radius:6px;display:inline-block;width:100%;text-align:center;}
   /* BOTONES DEL MENÚ (nav) MÁS PEQUEÑOS */
   .nav a {
