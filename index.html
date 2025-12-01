@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Casa de Antonina — Castilblanco de los Arroyos</title>
-<meta name="description" content="La Casa de Antonina, casa rural en Castilblanco de los Arroyos. Tranquilidad y naturaleza para familias y parejas.">
+<title>La Casa de Antonina — Castilblanco de los Arroyos, Sierra Norte Sevilla</title>
+<meta name="description" content="La Casa de Antonina, casa rural en Castilblanco de los Arroyos, en la Sierra Norte de Sevilla. Disfruta de tranquilidad, naturaleza, dehesas y encinas.">
+<meta name="keywords" content="Casa rural, Sierra Norte Sevilla, Castilblanco de los Arroyos, dehesa, encinas, paisaje rural, naturaleza, turismo rural">
 
 <style>
 :root{
@@ -25,6 +26,9 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;line-
 .hero .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:16px;background:linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.55));border-radius:14px;}
 .hero h1{color:var(--blanco);font-size:clamp(24px,4.5vw,42px);font-weight:700;margin-bottom:4px;text-align:center;}
 .hero p{color:rgba(255,255,255,0.9);font-size:0.95rem;margin-bottom:12px;text-align:center;}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+.hero .cta a{padding:8px 14px;border-radius:8px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;text-decoration:none;transition:background 0.3s;}
+.hero .cta a:hover{background:var(--verde-claro);}
 
 /* NAV */
 .nav{display:flex;gap:10px;overflow:auto;padding-bottom:8px;margin-bottom:18px;}
@@ -76,6 +80,10 @@ footer .instagram-icon img{width:34px;height:34px;}
   <div class="overlay">
     <h1>La Casa de Antonina</h1>
     <p>Castilblanco de los Arroyos · Tranquilidad y naturaleza</p>
+    <div class="cta">
+      <a href="https://www.booking.com/Share-e5Q64sx" target="_blank">Booking</a>
+      <a href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank">Airbnb</a>
+    </div>
   </div>
 </header>
 
@@ -83,9 +91,9 @@ footer .instagram-icon img{width:34px;height:34px;}
 <nav class="nav">
   <a href="#inicio">Bienvenidos</a>
   <a href="#casa">La Casa</a>
+  <a href="#galeria">Galería</a>
   <a href="#pueblo">El Pueblo</a>
   <a href="#entorno">Entorno</a>
-  <a href="#galeria">Galería</a>
   <a href="#contacto">Contacto</a>
 </nav>
 
@@ -94,8 +102,7 @@ footer .instagram-icon img{width:34px;height:34px;}
   <h2>Bienvenidos</h2>
   <p>En el corazón de Castilblanco de los Arroyos se encuentra La Casa de Antonina, la casa de mis abuelos. Construida en los años 40, ha sido testigo de varias generaciones y de la vida cotidiana del pueblo.</p>
   <div id="texto-completo" style="display:none;">
-    <p>Durante décadas, sus paredes acogieron la tienda de comestibles de Antonina Palomo y José Ortega, conocido como Pepe Pechete. Mi abuela, con su carácter alegre, siempre encontraba la manera de dar un poquito más a quien más lo necesitaba...</p>
-    <p>Los productos se vendían a granel, puestos en la báscula de hierro y envueltos con cariño en papel de estraza. En la misma casa, mi abuelo regentaba una pequeña barbería, donde las tijeras nunca descansaban...</p>
+    <p>Durante décadas, sus paredes acogieron la tienda de comestibles de Antonina Palomo y José Ortega, conocido como Pepe Pechete...</p>
   </div>
   <button class="btn" onclick="toggleTexto()">Leer más</button>
 </section>
@@ -126,33 +133,9 @@ function toggleTexto(){
     <li>Salón luminoso</li>
     <li>Patio privado</li>
   </ul>
-  <div class="cta" style="margin-top:10px;">
+  <div class="cta">
     <a href="https://www.booking.com/Share-e5Q64sx" target="_blank">Booking</a>
     <a href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank">Airbnb</a>
-  </div>
-</section>
-
-<!-- PUEBLO -->
-<section id="pueblo">
-  <h2>El Pueblo</h2>
-  <div class="gallery">
-    <img src="fotos/romeriasanbenito.jpg" alt="Romería San Benito">
-    <img src="fotos/romeriaescardiel1.jpg" alt="Romería Escardiel">
-    <img src="fotos/cervantes.jpg" alt="Piscina / actividades">
-    <img src="fotos/piñonate.jpg" alt="Dulces típicos">
-    <img src="fotos/sandracolinet.png" alt="Tradición apicultura">
-    <img src="fotos/iglesia.jpg" alt="Iglesia y calles del pueblo">
-  </div>
-</section>
-
-<!-- ENTORNO NATURAL -->
-<section id="entorno">
-  <h2>Entorno Natural</h2>
-  <p>Castilblanco y su entorno te ofrecen dehesas, paisajes y puestas de sol increíbles.</p>
-  <div class="gallery">
-    <img src="fotos/patiogrande.jpg" alt="Entorno 1">
-    <img src="fotos/patioprincipal.jpg" alt="Entorno 2">
-    <img src="fotos/entorno.jpg" alt="Entorno 3">
   </div>
 </section>
 
@@ -160,19 +143,38 @@ function toggleTexto(){
 <section id="galeria">
   <h2>Galería</h2>
   <div class="gallery">
-    <img src="fotos/salonsofa.jpg" alt="">
-    <img src="fotos/vitrinapeso.jpg" alt="">
-    <img src="fotos/cocinaextractor.jpg" alt="">
-    <img src="fotos/sillonprinci.jpg" alt="">
-    <img src="fotos/cocina-c.jpg" alt="">
-    <img src="fotos/bano2.jpg" alt="">
-    <img src="fotos/bano2-a.jpg" alt="">
-    <img src="fotos/dormitorio1.jpg" alt="">
-    <img src="fotos/habitacionalcoba.jpg" alt="">
-    <img src="fotos/besame1.jpg" alt="">
-    <img src="fotos/dormitorio3-b.jpg" alt="">
-    <img src="fotos/habitacion3b.jpg" alt="">
-    <img src="fotos/recibidor.jpg" alt="">
+    <img src="fotos/patiogrande.jpg" alt="Patio de La Casa de Antonina">
+    <img src="fotos/patioprincipal.jpg" alt="Patio principal de La Casa de Antonina">
+    <img src="fotos/salonsofa.jpg" alt="Salón con sofá">
+    <img src="fotos/vitrinapeso.jpg" alt="Vitrina y detalles">
+    <img src="fotos/cocinaextractor.jpg" alt="Cocina equipada">
+    <img src="fotos/sillonprinci.jpg" alt="Sillón principal">
+  </div>
+</section>
+
+<!-- PUEBLO -->
+<section id="pueblo">
+  <h2>El Pueblo</h2>
+  <p>Castilblanco de los Arroyos es un pintoresco pueblo sevillano que combina tranquilidad, historia y tradición. Sus calles empedradas, plazas acogedoras y casas blancas invitan a pasear y descubrir rincones llenos de siglos de historia.</p>
+  <div class="gallery">
+    <img src="fotos/romeriasanbenito.jpg" alt="Romería de San Benito en Castilblanco">
+    <img src="fotos/romeriaescardiel1.jpg" alt="Romería de Escardiel">
+    <img src="fotos/cervantes.jpg" alt="Piscina y actividades del pueblo">
+    <img src="fotos/piñonate.jpg" alt="Dulces típicos de Castilblanco">
+    <img src="fotos/sandracolinet.png" alt="Tradición apicultura en Castilblanco">
+    <img src="fotos/iglesia.jpg" alt="Iglesia y calles del pueblo">
+  </div>
+</section>
+
+<!-- ENTORNO NATURAL -->
+<section id="entorno">
+  <h2>Entorno Natural</h2>
+  <p>Castilblanco y su entorno natural te ofrecen dehesas, encinares y puestas de sol increíbles. Aquí puedes agregar tus fotos de paisajes.</p>
+  <div class="gallery">
+    <!-- REEMPLAZA ESTAS CON TUS FOTOS DE ENTORNO -->
+    <img src="fotos/entorno1.jpg" alt="Dehesa Sierra Norte">
+    <img src="fotos/entorno2.jpg" alt="Paisaje natural Sierra Norte">
+    <img src="fotos/entorno3.jpg" alt="Puesta de sol en la Sierra Norte">
   </div>
 </section>
 
