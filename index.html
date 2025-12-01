@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>La Casa de Antonina — Castilblanco de los Arroyos</title>
-<meta name="description" content="Casa rural en Castilblanco de los Arroyos. Tranquilidad, naturaleza y comodidad.">
+<meta name="description" content="La Casa de Antonina, casa rural en Castilblanco de los Arroyos. Tranquilidad y naturaleza para familias y parejas.">
 
 <style>
 :root{
@@ -15,37 +15,44 @@
   --blanco:#ffffff;
   --max-width:1100px;
 }
-
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;line-height:1.5;color:var(--gris-osc);background:var(--beige);}
 .container{max-width:var(--max-width);margin:0 auto;padding:16px;}
 
 /* HERO */
 .hero{position:relative;border-radius:14px;overflow:hidden;margin-bottom:22px;}
-.hero img{width:100%;height:55vw;max-height:420px;object-fit:cover;display:block;}
-.hero .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:16px;background:linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.55));}
+.hero img{width:100%;height:55vw;max-height:420px;object-fit:cover;display:block;border-radius:14px;}
+.hero .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:16px;background:linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.55));border-radius:14px;}
 .hero h1{color:var(--blanco);font-size:clamp(24px,4.5vw,42px);font-weight:700;margin-bottom:4px;text-align:center;}
 .hero p{color:rgba(255,255,255,0.9);font-size:0.95rem;margin-bottom:12px;text-align:center;}
-.hero .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;}
-.hero .cta a{padding:6px 10px;font-size:0.85rem;border-radius:999px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,0.2);text-decoration:none;}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:6px;}
+.hero .cta a{padding:6px 10px;font-size:0.85rem;border-radius:999px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,0.2);text-decoration:none;transition:background 0.3s;}
+.hero .cta a:hover{background:var(--verde-claro);}
 
 /* NAV */
-.nav{display:flex;gap:10px;overflow:auto;padding-bottom:8px;margin-bottom:8px;}
-.nav a{background:var(--blanco);padding:10px 14px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,0.08);white-space:nowrap;font-size:14px;text-decoration:none;color:var(--gris-osc);}
+.nav{display:flex;gap:10px;overflow:auto;padding-bottom:8px;margin-bottom:18px;}
+.nav a{background:var(--blanco);padding:10px 14px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,0.08);white-space:nowrap;font-size:14px;text-decoration:none;color:var(--gris-osc);transition:background 0.3s;}
+.nav a:hover{background:var(--verde-oliva);color:var(--blanco);}
 
 /* SECCIONES */
-section{background:var(--blanco);border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+section{background:var(--blanco);border-radius:12px;padding:18px;margin-bottom:22px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
 h2{color:var(--verde-oliva);margin-bottom:12px;font-size:1.4rem;}
+p, li{margin-bottom:10px;line-height:1.5;}
+ul{margin-left:20px;}
 
 /* GALERÍAS */
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
 @media(min-width:640px){.gallery{grid-template-columns:repeat(3,1fr);}}
-.gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;}
-@media(max-width:640px){.gallery img{height:120px;}}
+.gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform 0.3s;}
+.gallery img:hover{transform:scale(1.05);}
 
 /* BOTONES */
-.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;text-align:center;text-decoration:none;}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;text-align:center;text-decoration:none;transition:background 0.3s;}
+.btn:hover{background:var(--verde-claro);}
 .secondary{background:transparent;border:1px solid #ccc;color:var(--gris-osc);}
+
+/* FORMULARIO */
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:8px;}
 
 /* WHATSAPP FLOTANTE */
 .wa-float{position:fixed;right:16px;bottom:16px;background:#25D366;border-radius:50%;width:56px;height:56px;display:flex;justify-content:center;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,0.18);z-index:999;}
@@ -57,24 +64,10 @@ footer .instagram-icon img{width:34px;height:34px;}
 
 /* AJUSTES MÓVIL */
 @media(max-width:600px){
-@media(max-width:600px){
-  .hero .overlay {
-    padding: 12px;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  .hero .cta {
-    margin-bottom: 4px;
-  }
-  .hero .cta a {
-    padding: 5px 8px;
-    font-size: 0.8rem;
-  }
-  .gallery img {
-    height: 120px;
-  }
-}
- 
+  .hero .overlay{padding:12px;justify-content:flex-end;align-items:center;}
+  .hero .cta{margin-bottom:4px;}
+  .hero .cta a{padding:5px 8px;font-size:0.8rem;}
+  .gallery img{height:120px;}
 }
 </style>
 </head>
@@ -96,12 +89,39 @@ footer .instagram-icon img{width:34px;height:34px;}
 
 <!-- NAV -->
 <nav class="nav">
+  <a href="#inicio">Inicio</a>
   <a href="#pueblo">Pueblo</a>
   <a href="#entorno">Entorno</a>
   <a href="#casa">La Casa</a>
   <a href="#galeria">Galería</a>
   <a href="#contacto">Contacto</a>
 </nav>
+
+<!-- BIENVENIDOS -->
+<section id="inicio">
+  <h2>Bienvenidos</h2>
+  <p>En el corazón de Castilblanco de los Arroyos se encuentra La Casa de Antonina, la casa de mis abuelos. Construida en los años 40, ha sido testigo de varias generaciones y de la vida cotidiana del pueblo.</p>
+  <div id="texto-completo" style="display:none;">
+    <p>Durante décadas, sus paredes acogieron la tienda de comestibles de Antonina Palomo y José Ortega, conocido como Pepe Pechete. Mi abuela, con su carácter alegre, siempre encontraba la manera de dar un poquito más a quien más lo necesitaba...</p>
+    <p>Los productos se vendían a granel, puestos en la báscula de hierro y envueltos con cariño en papel de estraza. En la misma casa, mi abuelo regentaba una pequeña barbería, donde las tijeras nunca descansaban...</p>
+  </div>
+  <button class="btn" onclick="toggleTexto()">Leer más</button>
+</section>
+
+<script>
+function toggleTexto(){
+  const texto=document.getElementById('texto-completo');
+  const boton=event.target;
+  if(texto.style.display==='none'||texto.style.display===''){
+    texto.style.display='block';
+    boton.textContent='Leer menos';
+  } else {
+    texto.style.display='none';
+    boton.textContent='Leer más';
+    window.scrollTo({top:document.getElementById('inicio').offsetTop,behavior:'smooth'});
+  }
+}
+</script>
 
 <!-- PUEBLO -->
 <section id="pueblo">
@@ -138,6 +158,10 @@ footer .instagram-icon img{width:34px;height:34px;}
     <li>Salón luminoso</li>
     <li>Patio privado</li>
   </ul>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+    <a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank">Booking</a>
+    <a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank">Airbnb</a>
+  </div>
 </section>
 
 <!-- GALERÍA DE LA CASA -->
@@ -163,8 +187,13 @@ footer .instagram-icon img{width:34px;height:34px;}
 <!-- CONTACTO -->
 <section id="contacto">
   <h2>Contacto</h2>
-  <p><a class="btn" href="https://wa.me/34624283847" target="_blank">WhatsApp</a></p>
-  <p><a class="btn secondary" href="mailto:casaantonina@pippeces.com">Correo electrónico</a></p>
+  <form action="mailto:casaantonina@pippeces.com" method="post" enctype="text/plain">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+    <input class="btn" type="submit" value="Enviar">
+  </form>
+  <p style="margin-top:10px;"><a class="btn" href="https://wa.me/34624283847" target="_blank">WhatsApp</a></p>
 </section>
 
 <!-- WHATSAPP FLOTANTE -->
@@ -172,6 +201,7 @@ footer .instagram-icon img{width:34px;height:34px;}
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
 
+<!-- FOOTER -->
 <footer>
   <a href="https://www.instagram.com/lacasadeantonina" class="instagram-icon" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
@@ -182,5 +212,3 @@ footer .instagram-icon img{width:34px;height:34px;}
 </div>
 </body>
 </html>
-
-  
