@@ -25,9 +25,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;line-
 .hero .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:16px;background:linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.55));border-radius:14px;}
 .hero h1{color:var(--blanco);font-size:clamp(24px,4.5vw,42px);font-weight:700;margin-bottom:4px;text-align:center;}
 .hero p{color:rgba(255,255,255,0.9);font-size:0.95rem;margin-bottom:12px;text-align:center;}
-.hero .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:6px;}
-.hero .cta a{padding:6px 10px;font-size:0.85rem;border-radius:999px;background:var(--verde-oliva);color:var(--blanco);font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,0.2);text-decoration:none;transition:background 0.3s;}
-.hero .cta a:hover{background:var(--verde-claro);}
 
 /* NAV */
 .nav{display:flex;gap:10px;overflow:auto;padding-bottom:8px;margin-bottom:18px;}
@@ -65,9 +62,8 @@ footer .instagram-icon img{width:34px;height:34px;}
 /* AJUSTES MÓVIL */
 @media(max-width:600px){
   .hero .overlay{padding:12px;justify-content:flex-end;align-items:center;}
-  .hero .cta{margin-bottom:4px;}
-  .hero .cta a{padding:5px 8px;font-size:0.8rem;}
   .gallery img{height:120px;}
+  .btn{padding:6px 10px;font-size:0.8rem;}
 }
 </style>
 </head>
@@ -80,19 +76,15 @@ footer .instagram-icon img{width:34px;height:34px;}
   <div class="overlay">
     <h1>La Casa de Antonina</h1>
     <p>Castilblanco de los Arroyos · Tranquilidad y naturaleza</p>
-    <div class="cta">
-      <a href="https://www.booking.com/Share-e5Q64sx" target="_blank">Booking</a>
-      <a href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank">Airbnb</a>
-    </div>
   </div>
 </header>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="#inicio">Inicio</a>
-  <a href="#pueblo">Pueblo</a>
-  <a href="#entorno">Entorno</a>
+  <a href="#inicio">Bienvenidos</a>
   <a href="#casa">La Casa</a>
+  <a href="#pueblo">El Pueblo</a>
+  <a href="#entorno">Entorno</a>
   <a href="#galeria">Galería</a>
   <a href="#contacto">Contacto</a>
 </nav>
@@ -123,6 +115,23 @@ function toggleTexto(){
 }
 </script>
 
+<!-- LA CASA -->
+<section id="casa">
+  <h2>La Casa</h2>
+  <p>Una casa rural restaurada, acogedora y con historia.</p>
+  <ul>
+    <li>2 habitaciones + alcoba</li>
+    <li>2 baños</li>
+    <li>Cocina equipada</li>
+    <li>Salón luminoso</li>
+    <li>Patio privado</li>
+  </ul>
+  <div class="cta" style="margin-top:10px;">
+    <a href="https://www.booking.com/Share-e5Q64sx" target="_blank">Booking</a>
+    <a href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank">Airbnb</a>
+  </div>
+</section>
+
 <!-- PUEBLO -->
 <section id="pueblo">
   <h2>El Pueblo</h2>
@@ -144,23 +153,6 @@ function toggleTexto(){
     <img src="fotos/patiogrande.jpg" alt="Entorno 1">
     <img src="fotos/patioprincipal.jpg" alt="Entorno 2">
     <img src="fotos/entorno.jpg" alt="Entorno 3">
-  </div>
-</section>
-
-<!-- LA CASA -->
-<section id="casa">
-  <h2>La Casa</h2>
-  <p>Una casa rural restaurada, acogedora y con historia.</p>
-  <ul>
-    <li>2 habitaciones + alcoba</li>
-    <li>2 baños</li>
-    <li>Cocina equipada</li>
-    <li>Salón luminoso</li>
-    <li>Patio privado</li>
-  </ul>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
-    <a class="btn" href="https://www.booking.com/Share-e5Q64sx" target="_blank">Booking</a>
-    <a class="btn" href="https://www.airbnb.es/rooms/1508239973776428739" target="_blank">Airbnb</a>
   </div>
 </section>
 
