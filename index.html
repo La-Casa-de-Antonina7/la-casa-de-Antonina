@@ -69,6 +69,41 @@ footer .instagram-icon img{width:34px;height:34px;}
   .gallery img{height:120px;}
   .btn{padding:6px 10px;font-size:0.8rem;}
 }
+/* ESTILO PARA GALERÍAS DE FIESTAS */
+#fiestas .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#fiestas .gallery img {
+  width: calc(33.333% - 10px); /* 3 fotos por fila */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+#fiestas .gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* AJUSTES MÓVIL */
+@media (max-width: 768px) {
+  #fiestas .gallery img {
+    width: calc(50% - 10px); /* 2 fotos por fila en móvil */
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  #fiestas .gallery img {
+    width: 100%; /* 1 foto por fila en móvil pequeño */
+    height: 150px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -220,7 +255,70 @@ function toggleTexto(){
     <img src="fotos/puestadesol1.jpg" alt="Puesta de sol en la Sierra Norte">
   </div>
 </section>
+<!-- FIESTAS -->
+<section id="fiestas">
+  <h2>Qué se vive en Castilblanco de los Arroyos</h2>
+  <p>En Castilblanco hay momentos del año en los que el pueblo se viste de fiesta y tradición.</p>
 
+  <!-- SEMANA SANTA -->
+  <article id="semana-santa">
+    <h3>Semana Santa</h3>
+    <p>Cada primavera, las calles se llenan de recogimiento y devoción al ver procesionar las hermandades del pueblo con fe y solemnidad.</p>
+    <p>Las cofradías que procesionan incluyen:</p>
+    <ul>
+      <li>Hermandad del Santísimo Cristo de la Humildad y Paciencia</li>
+      <li>Hermandad de Nuestra Señora de la Amargura</li>
+      <li>Hermandad del Santo Entierro y Nuestra Señora de los Dolores</li>
+    </ul>
+    <!-- GALERÍA DE SEMANA SANTA -->
+    <div class="gallery">
+      <!-- Inserta aquí tus fotos de Semana Santa -->
+      <img src="fotos/ss1.jpg" alt="Semana Santa Castilblanco 1">
+      <img src="fotos/ss2.jpg" alt="Semana Santa Castilblanco 2">
+    </div>
+  </article>
+
+  <!-- FERIA Y FIESTA DEL AGUA -->
+  <article id="feria">
+    <h3>Feria y Fiesta del Agua (verano)</h3>
+    <p>El verano trae la Feria de Castilblanco de los Arroyos, una de las fiestas grandes del pueblo. Durante la Feria encontrarás ambiente festivo, casetas, amigos, reencuentros y celebraciones que reúnen a vecinos y visitantes en un clima de convivencia.</p>
+    <p>La Fiesta del Agua es una de las tradiciones más peculiares y divertidas, surgida en 1986 para celebrar el acceso al agua del pueblo tras años de sequía. Consiste en una divertida guerra de agua en la “Plaza Amarilla”, donde todo el pueblo se moja para celebrar el agua del embalse, en una jornada espontánea de alegría.</p>
+    <p>La Fiesta del Agua marca el inicio de la Feria y de las fiestas patronales en honor a la Virgen de Gracia. Durante la Feria hay atracciones, actos festivos y ambiente de feria que invita a disfrutar de la vida del pueblo.</p>
+    <!-- GALERÍA DE FOTOS DE LA FERIA -->
+    <div class="gallery">
+      <!-- Inserta aquí tus fotos de la Feria -->
+      <img src="fotos/feria1.jpg" alt="Feria Castilblanco 1">
+      <img src="fotos/feria2.jpg" alt="Feria Castilblanco 2">
+      <img src="fotos/feria3.jpg" alt="Feria Castilblanco 3">
+    </div>
+  </article>
+
+  <!-- ROMERÍA DE SAN BENITO ABAD -->
+  <article id="romeria">
+    <h3>Romería de San Benito Abad (finales de agosto)</h3>
+    <p>Una de las celebraciones más emotivas y esperadas: la romería en honor al patrón del pueblo, San Benito. Caballos, carretas, peregrinos, reliquias, misa, procesiones y fiesta en la ermita. Una mezcla de tradición, emoción y celebración que no deja indiferente a nadie.</p>
+    <!-- GALERÍA DE ROMERÍA -->
+    <div class="gallery">
+      <!-- Inserta aquí tus fotos de la Romería -->
+      <img src="fotos/romeria1.jpg" alt="Romería San Benito 1">
+      <img src="fotos/romeria2.jpg" alt="Romería San Benito 2">
+    </div>
+  </article>
+
+  <!-- NAVIDAD Y REYES -->
+  <article id="navidad">
+    <h3>Navidad y Reyes — ambiente de pueblo</h3>
+    <p>Durante el invierno, la Navidad en Castilblanco tiene su magia: luces, ambiente familiar, celebraciones, reuniones y la tradicional Cabalgata de Reyes Magos.</p>
+    <!-- GALERÍA DE NAVIDAD -->
+    <div class="gallery">
+      <!-- Inserta aquí tus fotos de Navidad -->
+      <img src="fotos/navidad1.jpg" alt="Navidad Castilblanco 1">
+      <img src="fotos/navidad2.jpg" alt="Cabalgata de Reyes Castilblanco">
+    </div>
+  </article>
+</section>
+
+  
 <!-- CONTACTO -->
 <section id="contacto">
   <h2>Contacto</h2>
