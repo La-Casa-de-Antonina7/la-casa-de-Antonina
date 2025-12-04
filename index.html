@@ -295,31 +295,84 @@ function toggleTexto(){
     </div>
   </article>
 <!-- Bloque Romerías en Castilblanco de los Arroyos -->
-<section id="romerias">
+<style>
+  .romerias-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 15px;
+  }
+
+  .romerias-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .romerias-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .romeria-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .romeria-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .romeria-card p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .romeria-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .romerias-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="romerias-section">
   <h2>Romerías en Castilblanco de los Arroyos</h2>
-  <p>
-    Castilblanco celebra cada año <strong>dos romerías muy especiales</strong>, que reflejan nuestras tradiciones y el espíritu del pueblo.
-  </p>
 
-  <!-- Romería de San Benito Abad -->
-  <div>
-    <h3>Romería de San Benito Abad (finales de agosto)</h3>
-    <p>
-      Celebrada desde <strong>1777</strong>, esta romería reúne a vecinos y visitantes con caballos, carretas, peregrinos, misa y procesiones en honor al patrón del pueblo. Una mezcla de tradición y celebración que no deja indiferente a nadie.
-    </p>
-    <img src="ruta-de-la-foto-san-benito.jpg" alt="Romería de San Benito">
-  </div>
+  <div class="romerias-container">
 
-  <!-- Romería de la Virgen de Escardiel -->
-  <div>
-    <h3>Romería de la Virgen de Escardiel (segundo fin de semana de septiembre)</h3>
-    <p>
-      Con raíces medievales, esta romería combina devoción, música y convivencia vecinal. Es la ocasión perfecta para conocer la riqueza cultural y la hospitalidad de Castilblanco.
-    </p>
-<img src="ruta-de-la-foto-romeria-escardiel-castilblanco.jpg" alt="Romería de Escardiel">
-    <img src="foto/romeria-escardiel-castilblanco.jpg" 
+    <!-- Romería de San Benito Abad -->
+    <div class="romeria-card">
+      <h3>Romería de San Benito Abad (finales de agosto)</h3>
+      <p>
+        Celebrada desde <strong>1777</strong>, esta romería reúne a vecinos y visitantes con caballos, carretas, peregrinos, misa y procesiones en honor al patrón del pueblo. Una mezcla de tradición y celebración que no deja indiferente a nadie.
+      </p>
+      <img src="foto/romeria-san-benito.jpg" alt="Romería de San Benito">
+    </div>
+
+    <!-- Romería de la Virgen de Escardiel -->
+    <div class="romeria-card">
+      <h3>Romería de la Virgen de Escardiel (segundo fin de semana de septiembre)</h3>
+      <p>
+        La devoción a la Virgen de Escardiel es una de las más antiguas de Castilblanco, con menciones medievales y una práctica romera consolidada entre los siglos XVII y XVIII.  
+        Cada año, los vecinos acompañan al Simpecado en peregrinación hacia el campo: romeros a pie, carretas, caballos y familias avanzan juntas hacia la ermita, uniendo fe e identidad local.
+      </p>
+      <img src="foto/romeria-escardiel.jpg" alt="Romería de Escardiel">
+    </div>
+
   </div>
 </section>
+
 
  
 
